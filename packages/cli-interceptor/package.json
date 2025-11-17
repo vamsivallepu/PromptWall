@@ -1,0 +1,19 @@
+{
+  "name": "@ai-firewall/cli-interceptor",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "bin": {
+    "ai-firewall-cli": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@ai-firewall/shared": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.0"
+  }
+}

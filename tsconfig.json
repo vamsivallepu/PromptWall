@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "references": [
+    { "path": "./packages/shared" },
+    { "path": "./packages/browser-extension" },
+    { "path": "./packages/desktop-agent" },
+    { "path": "./packages/cli-interceptor" },
+    { "path": "./packages/dashboard" }
+  ]
+}

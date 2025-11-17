@@ -1,0 +1,15 @@
+{
+  "name": "@ai-firewall/browser-extension",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@ai-firewall/shared": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/chrome": "^0.0.254"
+  }
+}
