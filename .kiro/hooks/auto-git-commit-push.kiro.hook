@@ -1,0 +1,22 @@
+{
+  "enabled": true,
+  "name": "Auto Git Commit & Push",
+  "description": "Automatically commits code changes with proper commit messages and pushes to git repository after major changes to avoid losing code",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "packages/**/*.ts",
+      "packages/**/*.tsx",
+      "packages/**/*.py",
+      "packages/**/*.json",
+      "*.json",
+      "*.md",
+      "packages/**/*.html"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review the recent file changes in the workspace. If there are significant code changes that constitute a meaningful unit of work (new features, bug fixes, refactoring, etc.), create an appropriate git commit with a clear, descriptive commit message following conventional commit format (e.g., \"feat: add user authentication\", \"fix: resolve API timeout issue\", \"refactor: improve database query performance\"). After committing, push the changes to the remote git repository. Only commit if the changes are substantial enough to warrant a commit - ignore trivial changes like formatting or comments only."
+  }
+}

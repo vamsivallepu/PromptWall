@@ -67,6 +67,22 @@ cd packages/dashboard && npm run dev
 cd packages/backend && uvicorn app.main:app --reload
 ```
 
+### Testing
+
+Run backend tests:
+```bash
+cd packages/backend
+pytest
+```
+
+Test GLiNER model performance:
+```bash
+cd packages/backend
+python test_model.py
+```
+
+The `test_model.py` script evaluates different GLiNER models for entity detection, comparing accuracy and performance across various label sets.
+
 ## Architecture
 
 The system consists of:

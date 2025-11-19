@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "name": "Source to Docs Sync",
+  "description": "Monitors all TypeScript and Python source files in the repository. When changes are detected, prompts the agent to update the README.md or docs folder to reflect the code changes.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "packages/**/*.ts",
+      "packages/**/*.tsx",
+      "packages/**/*.py",
+      "*.ts",
+      "tsconfig.json",
+      "package.json",
+      "packages/*/package.json",
+      "packages/backend/requirements.txt",
+      "packages/backend/pyproject.toml",
+      "vite.config.ts"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Source code files have been modified. Please review the changes and update the documentation accordingly. Check if README.md needs updates to reflect new functionality, API changes, or architectural modifications. If there is a /docs folder, update relevant documentation files there as well. Ensure documentation stays in sync with the codebase changes."
+  }
+}

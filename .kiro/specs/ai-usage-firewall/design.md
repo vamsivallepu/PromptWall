@@ -119,7 +119,7 @@ interface PromptEvent {
 **Implementation Approach**:
 
 - **ML Model**: Use GLiNER PII Edge v1.0 (knowledgator/gliner-pii-edge-v1.0) for PII detection
-  - Lightweight edge-optimized model (~50MB) designed for on-device inference
+  - Lightweight model optimized for PII detection with improved accuracy
   - Zero-shot NER model that can detect multiple PII entity types without fine-tuning
   - Supports detection of: person names, organizations, locations, emails, phone numbers, credit cards, SSN, IP addresses, dates, medical info, and more
   - Fast inference suitable for real-time classification (<500ms for typical prompts)

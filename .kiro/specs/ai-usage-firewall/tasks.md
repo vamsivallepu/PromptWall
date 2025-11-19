@@ -7,46 +7,46 @@
   - Configure build tools (TypeScript compiler, Python packaging)
   - _Requirements: 1.1, 2.1, 3.1_
 
-- [ ] 2. Implement GLiNER-based Classification Engine
-  - [ ] 2.1 Create Python classification service with GLiNER model
+- [x] 2. Implement GLiNER-based Classification Engine
+  - [x] 2.1 Create Python classification service with GLiNER model
     - Install gliner library and download knowledgator/gliner-pii-edge-v1.0 model
     - Implement model initialization with local caching
     - Create classify() function that accepts text and returns detected entities with confidence scores
     - Map GLiNER entity types to internal PII categories (person, email, phone, credit_card, etc.)
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.6_
   
-  - [ ] 2.2 Implement risk scoring algorithm
+  - [x] 2.2 Implement risk scoring algorithm
     - Create scoring logic based on entity count and confidence levels
     - Assign green/amber/red risk levels according to thresholds
     - Handle edge cases (empty prompts, very long prompts)
     - _Requirements: 2.5_
   
-  - [ ] 2.3 Add regex-based fallback patterns
+  - [x] 2.3 Add regex-based fallback patterns
     - Implement regex patterns for emails, phone numbers, credit cards, SSNs
     - Create fallback classification when GLiNER model is unavailable
     - Merge GLiNER and regex results, deduplicating overlapping detections
     - _Requirements: 2.1, 2.2, 2.3_
   
-  - [ ] 2.4 Write unit tests for classification engine
+  - [x] 2.4 Write unit tests for classification engine
     - Test with known PII samples (names, emails, credit cards)
     - Test edge cases (empty strings, very long text, special characters)
     - Verify risk scoring logic with various entity combinations
     - _Requirements: 2.1, 2.5, 2.6_
 
-- [ ] 3. Implement Sanitization Engine
-  - [ ] 3.1 Create sanitization logic using GLiNER detection results
+- [x] 3. Implement Sanitization Engine
+  - [x] 3.1 Create sanitization logic using GLiNER detection results
     - Replace detected entities with typed placeholders (e.g., [PERSON], [EMAIL])
     - Implement masking strategy for partial redaction
     - Implement complete redaction strategy
     - Preserve prompt structure and whitespace
     - _Requirements: 4.1, 4.2, 4.3_
   
-  - [ ] 3.2 Generate diff between original and sanitized prompts
+  - [x] 3.2 Generate diff between original and sanitized prompts
     - Create diff visualization showing replacements
     - Highlight changed spans with entity type labels
     - _Requirements: 4.4_
   
-  - [ ] 3.3 Write unit tests for sanitization engine
+  - [x] 3.3 Write unit tests for sanitization engine
     - Test placeholder replacement accuracy
     - Test masking and redaction strategies
     - Verify diff generation correctness
