@@ -52,42 +52,42 @@
     - Verify diff generation correctness
     - _Requirements: 4.1, 4.2, 4.3_
 
-- [ ] 4. Build FastAPI backend service
-  - [ ] 4.1 Set up FastAPI application structure
+- [x] 4. Build FastAPI backend service
+  - [x] 4.1 Set up FastAPI application structure
     - Create FastAPI app with CORS middleware
     - Configure Pydantic models for request/response validation
     - Set up async database connection pool (asyncpg for PostgreSQL)
     - Implement JWT authentication middleware
     - _Requirements: 3.1, 3.2_
   
-  - [ ] 4.2 Implement log ingestion endpoint
+  - [x] 4.2 Implement log ingestion endpoint
     - Create POST /api/v1/logs/batch endpoint for batched log uploads
     - Validate incoming log entries against schema
     - Insert logs into PostgreSQL database
     - Implement rate limiting per device (1000 logs/hour)
     - _Requirements: 3.1, 3.4_
   
-  - [ ] 4.3 Implement log query endpoints
+  - [x] 4.3 Implement log query endpoints
     - Create GET /api/v1/logs endpoint with filtering (date range, risk level, tool name, user)
     - Implement pagination (page, limit parameters)
     - Create GET /api/v1/stats/summary endpoint for dashboard statistics
     - Optimize queries with database indexes
     - _Requirements: 3.2, 3.5_
   
-  - [ ] 4.4 Implement configuration endpoints
+  - [x] 4.4 Implement configuration endpoints
     - Create GET /api/v1/config endpoint to fetch firewall configuration
     - Create PUT /api/v1/config endpoint to update configuration
     - Validate configuration changes (retention days 30-365, valid regex patterns)
     - _Requirements: 6.1, 6.2, 6.3, 6.4, 6.5_
   
-  - [ ] 4.5 Implement log export functionality
+  - [x] 4.5 Implement log export functionality
     - Create GET /api/v1/logs/export endpoint with format parameter (csv, json)
     - Generate CSV files with proper headers and escaping
     - Generate JSON files with complete log data
     - Stream large exports to avoid memory issues
     - _Requirements: 3.3_
   
-  - [ ] 4.6 Write integration tests for API endpoints
+  - [x] 4.6 Write integration tests for API endpoints
     - Test log ingestion with valid and invalid data
     - Test query endpoints with various filters
     - Test configuration CRUD operations
