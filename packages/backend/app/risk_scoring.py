@@ -206,3 +206,20 @@ def get_risk_scoring_engine() -> RiskScoringEngine:
         _risk_scoring_engine = RiskScoringEngine()
     
     return _risk_scoring_engine
+
+
+def calculate_risk_level(entities: List[DetectedEntity], prompt_length: int = 0) -> str:
+    """
+    Calculate risk level from detected entities.
+    Convenience function that returns just the risk level string.
+    
+    Args:
+        entities: List of detected entities
+        prompt_length: Length of the prompt
+    
+    Returns:
+        Risk level as string: "green", "amber", or "red"
+    """
+    engine = get_risk_scoring_engine()
+    score = engine.score(entities, prompt_length)
+    return score.risk_level.value

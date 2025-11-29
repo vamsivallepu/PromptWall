@@ -68,7 +68,7 @@ def validate_config(config: FirewallConfig) -> None:
             )
 
 
-@router.get("", response_model=FirewallConfig)
+@router.get("", response_model=FirewallConfig, response_model_by_alias=False)
 async def get_config(
     organization_id: Optional[str] = None,
     db: AsyncSession = Depends(get_db),
@@ -111,7 +111,7 @@ async def get_config(
     return config
 
 
-@router.put("", response_model=FirewallConfig)
+@router.put("", response_model=FirewallConfig, response_model_by_alias=False)
 async def update_config(
     config: FirewallConfig,
     db: AsyncSession = Depends(get_db),
@@ -171,7 +171,7 @@ async def update_config(
     return updated_config
 
 
-@router.post("", response_model=FirewallConfig, status_code=status.HTTP_201_CREATED)
+@router.post("", response_model=FirewallConfig, status_code=status.HTTP_201_CREATED, response_model_by_alias=False)
 async def create_config(
     config: FirewallConfig,
     db: AsyncSession = Depends(get_db),

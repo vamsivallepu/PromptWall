@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Extension Test</title>
+</head>
+<body>
+  <h1>AI Firewall Extension Test</h1>
+  <p>Open console to see if extension is loaded</p>
+  <script>
+    console.log('Test page loaded');
+    setTimeout(() => {
+      console.log('Checking for extension...');
+      if (typeof chrome !== 'undefined' && chrome.runtime) {
+        console.log('Chrome extension API available');
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

@@ -2,14 +2,19 @@
   "name": "@ai-firewall/browser-extension",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch"
+    "build": "tsc && cp src/manifest.json dist/ && cp src/*.png dist/ && sed -i 's/export {};$//' dist/*.js",
+    "dev": "tsc --watch",
+    "test": "vitest --run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@ai-firewall/shared": "^1.0.0"
   },
   "devDependencies": {
     "typescript": "^5.3.3",
-    "@types/chrome": "^0.0.254"
+    "@types/chrome": "^0.0.254",
+    "vitest": "^1.0.4",
+    "@vitest/ui": "^1.0.4",
+    "jsdom": "^23.0.1"
   }
 }

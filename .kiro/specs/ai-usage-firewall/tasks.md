@@ -94,60 +94,60 @@
     - Test export functionality with different formats
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
 
-- [ ] 5. Create database schema and migrations
-  - [ ] 5.1 Design PostgreSQL database schema
+- [x] 5. Create database schema and migrations
+  - [x] 5.1 Design PostgreSQL database schema
     - Create logs table with indexes on timestamp, userId, toolName, riskLevel
     - Create config table for firewall configuration
     - Create devices table for device registration
     - Create users table for authentication
     - _Requirements: 3.1, 3.4_
   
-  - [ ] 5.2 Implement database migrations
+  - [x] 5.2 Implement database migrations
     - Set up Alembic for database migrations
     - Create initial migration with all tables
     - Add indexes for query performance
     - _Requirements: 3.4_
   
-  - [ ] 5.3 Implement log retention policy
+  - [x] 5.3 Implement log retention policy
     - Create scheduled job to delete logs older than configured retention period
     - Add database trigger or cron job for automatic cleanup
     - _Requirements: 3.4, 6.4_
 
-- [ ] 6. Build browser extension for web AI tool detection
-  - [ ] 6.1 Create Manifest V3 extension structure
+- [x] 6. Build browser extension for web AI tool detection
+  - [x] 6.1 Create Manifest V3 extension structure
     - Set up manifest.json with required permissions (activeTab, storage)
     - Create background service worker for detection logic
     - Create content scripts for AI tool page injection
     - _Requirements: 1.1, 1.2_
   
-  - [ ] 6.2 Implement AI tool detection for major platforms
+  - [x] 6.2 Implement AI tool detection for major platforms
     - Add content script for ChatGPT (chat.openai.com) to intercept form submissions
     - Add content script for Claude (claude.ai) to intercept API calls
     - Add content script for Gemini (gemini.google.com) to monitor input fields
     - Add content script for Copilot (copilot.microsoft.com) to capture prompts
     - _Requirements: 1.2_
   
-  - [ ] 6.3 Integrate classification engine in extension
-    - Load GLiNER model via ONNX Runtime Web (if available) or call local Python service
+  - [x] 6.3 Integrate classification engine in extension
+    - Call local Python service that uses GLiNER model for classification
     - Classify prompts before submission to AI tools
     - Display risk level to user in real-time
     - _Requirements: 2.1, 2.5, 2.6, 5.1, 5.2_
   
-  - [ ] 6.4 Implement prompt interception and sanitization UI
+  - [x] 6.4 Implement prompt interception and sanitization UI
     - Show modal when sensitive data is detected
     - Display original vs sanitized prompt with diff highlighting
     - Provide "Use Sanitized" and "Cancel" buttons
     - Log user decision (used sanitized or cancelled)
     - _Requirements: 4.4, 4.5_
   
-  - [ ] 6.5 Implement local log buffering and sync
+  - [x] 6.5 Implement local log buffering and sync
     - Store logs in browser local storage
     - Batch upload logs to backend API every 5 minutes or 50 logs
     - Retry failed uploads with exponential backoff
     - Handle offline mode gracefully
     - _Requirements: 3.1, 5.1, 5.2_
   
-  - [ ] 6.6 Write extension tests
+  - [x] 6.6 Write extension tests
     - Test content script injection on AI tool pages
     - Test prompt detection and interception
     - Test classification integration

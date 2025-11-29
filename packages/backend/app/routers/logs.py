@@ -69,7 +69,7 @@ async def upload_logs(
         )
 
 
-@router.get("", response_model=LogPage)
+@router.get("", response_model=LogPage, response_model_by_alias=False)
 async def get_logs(
     start_date: Optional[str] = None,
     end_date: Optional[str] = None,
@@ -187,7 +187,7 @@ async def get_logs(
 
 
 
-@router.get("/stats/summary", response_model=SummaryStats)
+@router.get("/stats/summary", response_model=SummaryStats, response_model_by_alias=False)
 async def get_summary_stats(
     start_date: Optional[str] = None,
     end_date: Optional[str] = None,
